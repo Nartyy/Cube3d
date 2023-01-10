@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pars_blob.c                                        :+:      :+:    :+:   */
+/*   pars_blob_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfantine <lfantine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:22:00 by lfantine          #+#    #+#             */
-/*   Updated: 2023/01/10 10:34:11 by lfantine         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:22:29 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		blob_hub(char **map, t_pos p_pos);
 t_pos	find_start_player(char **map);
+void	replace_otherchar(char **map);
 
 int	launch_blob(t_system *sys)
 {
@@ -22,6 +23,7 @@ int	launch_blob(t_system *sys)
 
 	map = make_map(sys);
 	p_pos = find_start_player(map);
+	replace_otherchar(map);
 	if (blob_hub(map, p_pos) == -1)
 	{
 		free_char_tab(map);

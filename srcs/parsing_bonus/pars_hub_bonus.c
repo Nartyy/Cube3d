@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pars_hub.c                                         :+:      :+:    :+:   */
+/*   pars_hub_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfantine <lfantine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:30:45 by lfantine          #+#    #+#             */
-/*   Updated: 2023/01/10 10:35:17 by lfantine         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:12:31 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ int	verif_line(t_system *sys)
 
 int	verif_char2(int k, t_system *sys, int i, int j)
 {
-	while (k <= NB_CHAR)
+	while (k <= NB_CHAR_B)
 	{
-		if (k == NB_CHAR)
+		if (k == NB_CHAR_B)
 		{
 			free_char_tab(sys->map);
 			printf("Not usable char in map !\n");

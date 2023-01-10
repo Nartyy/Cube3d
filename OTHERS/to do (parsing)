@@ -5,3 +5,9 @@
 	//-> verifier les chars de maps
 	//-> 11 ligne min
 	-> verifier l'access au texture
+
+
+			BONUS
+	-> 'P' pour les doors
+	-> 'T' pour les Tableaux 1
+	-> 'F' pour fake doors (passage sans collision)

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr_cb.c                                     :+:      :+:    :+:   */
+/*   pars_blob2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfantine <lfantine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 10:33:52 by lfantine          #+#    #+#             */
-/*   Updated: 2023/01/10 10:33:53 by lfantine         ###   ########.fr       */
+/*   Created: 2023/01/10 10:21:53 by lfantine          #+#    #+#             */
+/*   Updated: 2023/01/10 10:22:42 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	*ft_memchr_cb(const void *s, int c, size_t n)
+t_pos	find_start_player(char **map)
 {
-	size_t	i;
-	char	*p;
-	void	*r;
+	t_pos	p_pos;
 
-	p = (char *) s;
-	i = 0;
-	while (i < n)
+	p_pos.y = 0;
+	while (map[p_pos.y])
 	{
-		if ((unsigned char)p[i] == (unsigned char)c)
+		p_pos.x = 0;
+		while (map[p_pos.y][p_pos.x])
 		{
-			r = &p[i];
-			return (r);
+			if (map[p_pos.y][p_pos.x] == 'N' || map[p_pos.y][p_pos.x] == 'S' ||
+					map[p_pos.y][p_pos.x] == 'W'
+					|| map[p_pos.y][p_pos.x] == 'E')
+				return (p_pos);
+			p_pos.x++;
 		}
-		i++;
+		p_pos.y++;
 	}
-	return (NULL);
+	return (p_pos);
 }
